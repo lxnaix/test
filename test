@@ -1,0 +1,70 @@
+for i, v in pairs(workspace:GetChildren()) do
+    if v:FindFirstChild("Main") and v:FindFirstChild("PickableItem") and not v:FindFirstChild("Main"):FindFirstChild("aaaaaa") then
+        local a = Instance.new("BillboardGui", v.Main)
+        a.Name = "aaaaaa"
+        a.AlwaysOnTop = true
+        a.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        a.Adornee = v2
+        a.Size = UDim2.new(2, 1, 2)
+        a.MaxDistance = math.huge
+ 
+        local b = Instance.new("TextLabel", a)
+        b.Name = tostring(math.random(1, 999999))
+        b.Text = v.Name
+        b.Font = Enum.Font.SourceSans
+        b.Size = UDim2.new(0, 150, 0, 20)
+        b.Position = UDim2.new(0.5, -75, 1, -15)
+        b.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+        b.TextStrokeTransparency = 0.8
+        b.TextSize = 14
+        b.ZIndex = 5
+        b.BackgroundTransparency = 1
+        b.TextColor3 = Color3.fromRGB(255, 215, 0)
+    elseif v:FindFirstChild("Part") and v:FindFirstChild("PickableItem") and not v:FindFirstChild("Part"):FindFirstChild("aaaaaa") then
+        local a = Instance.new("BillboardGui", v.Part)
+        a.Name = "aaaaaa"
+        a.AlwaysOnTop = true
+        a.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        a.Adornee = v2
+        a.Size = UDim2.new(2, 1, 2)
+        a.MaxDistance = math.huge
+ 
+        local b = Instance.new("TextLabel", a)
+        b.Name = tostring(math.random(1, 999999))
+        b.Text = v.Name
+        b.Font = Enum.Font.SourceSans
+        b.Size = UDim2.new(0, 150, 0, 20)
+        b.Position = UDim2.new(0.5, -75, 1, -15)
+        b.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+        b.TextStrokeTransparency = 0.8
+        b.TextSize = 14
+        b.ZIndex = 5
+        b.BackgroundTransparency = 1
+        b.TextColor3 = Color3.fromRGB(255, 215, 0)
+    end
+end
+ 
+workspace.DescendantAdded:Connect(function(desc)
+    if desc.Parent:FindFirstChild("PickableItem") then
+        local a = Instance.new("BillboardGui", desc)
+        a.Name = "aaaaaa"
+        a.AlwaysOnTop = true
+        a.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        a.Adornee = desc
+        a.Size = UDim2.new(2, 1, 2)
+        a.MaxDistance = math.huge
+ 
+        local b = Instance.new("TextLabel", a)
+        b.Name = tostring(math.random(1, 999999))
+        b.Text = desc.Parent.Name
+        b.Font = Enum.Font.SourceSans
+        b.Size = UDim2.new(0, 150, 0, 20)
+        b.Position = UDim2.new(0.5, -75, 1, -15)
+        b.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+        b.TextStrokeTransparency = 0.8
+        b.TextSize = 14
+        b.ZIndex = 5
+        b.BackgroundTransparency = 1
+        b.TextColor3 = Color3.fromRGB(255, 215, 0)
+    end
+end)
